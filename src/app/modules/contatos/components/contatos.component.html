@@ -1,0 +1,27 @@
+<a routerLink="/home">Home</a>
+<table>
+	<tbody>
+		<tr>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Telefone</th>
+			<th>Operadora</th>
+			<th colspan="2">Ação</th>
+		</tr>
+		<tr *ngFor="let contato of contatos">
+			<td>{{contato.identificador}}</td>
+			<td>{{contato.nome}}</td>
+			<td>{{contato.telefone}}</td>
+			<td>{{contato.operadora}}</td>
+			<td><button routerLink="/contato/{{contato.identificador}}/edit">edit</button></td>
+			<td><button routerLink="/contato/{{contato.identificador}}/delete">delete</button></td>
+		</tr>				
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>
+				<button routerLink="/contato/add">Add</button>
+			</td>			
+		</tr>
+	</tfoot>
+</table>
