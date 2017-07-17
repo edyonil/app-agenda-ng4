@@ -38,17 +38,25 @@ export class ContatosService {
     return this.getContatos().then( contatos => contatos.find( contato => contato.identificador == id ) );       
   }
 
-  addContato(item)
+  addContato(item: Contatos)
   {
   	this.contatos.push(item);
   }
 
-  editContato(item)
+  editContato(item: Contatos)
   {
     this.getContato(item.identificador).then(contato => {
       contato.nome = item.nome;      
       contato.telefone = item.telefone;
       contato.operadora = item.operadora;
     });    
+  }
+
+  deleteContato(id: number)
+  { 
+    this.getContatos().then( contatos => {
+      this.contatos = contatos.filter(contato => contato.identificador != id)
+    });
+    return this.contatos;
   }
 }

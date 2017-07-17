@@ -14,7 +14,7 @@
 			<td>{{contato.telefone}}</td>
 			<td>{{contato.operadora}}</td>
 			<td><button routerLink="/contato/{{contato.identificador}}/edit">edit</button></td>
-			<td><button routerLink="/contato/{{contato.identificador}}/delete">delete</button></td>
+			<td><button (click)="onDelete(contato.identificador)">delete</button></td>
 		</tr>				
 	</tbody>
 	<tfoot>
