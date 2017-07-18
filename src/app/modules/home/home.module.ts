@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { appRoutes } from './../../app.routes';
 
 import { ContatosModule } from './../contatos/contatos.module';
 
@@ -10,6 +13,9 @@ import { HomeComponent } from './components/home.component';
   imports: [
     CommonModule,
     ContatosModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   declarations: [
   	HomeComponent

@@ -1,10 +1,14 @@
-<div>
-	<form #form="ngForm" (ngSubmit)="add(form)">
-		<input type="text" [ngModel]="contato?.identificador" name="identificador">
-		<input type="text" [ngModel]="contato?.nome" name="nome" placeholder="nome">
-		<input type="text" [ngModel]="contato?.telefone" name="telefone" placeholder="telefone">
-		<input type="text" [ngModel]="contato?.operadora" name="operadora" placeholder="operadora">
-		<button type="submit">Add</button>
-	</form>
-	<button (click)="goBack()">Voltar</button>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form #form="ngForm" (ngSubmit)="add(form)">
+				<input type="text" [ngModel]="contato?.identificador" readonly name="identificador">
+				<input type="text" [ngModel]="contato?.nome" name="nome" placeholder="nome">
+				<input type="text" [ngModel]="contato?.telefone" name="telefone" placeholder="telefone">
+				<input type="text" [ngModel]="contato?.operadora" name="operadora" placeholder="operadora">
+				<button type="submit">Add</button>
+			</form>
+			<button (click)="goBack()">Voltar</button>
+		</div>
+	</div>
 </div>

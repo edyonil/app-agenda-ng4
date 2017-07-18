@@ -8,13 +8,13 @@
 			<th>Operadora</th>
 			<th colspan="2">Ação</th>
 		</tr>
-		<tr *ngFor="let contato of contatos">
+		<tr *ngFor="let contato of contatos; let i = index">
 			<td>{{contato.identificador}}</td>
 			<td>{{contato.nome}}</td>
 			<td>{{contato.telefone}}</td>
 			<td>{{contato.operadora}}</td>
 			<td><button routerLink="/contato/{{contato.identificador}}/edit">edit</button></td>
-			<td><button (click)="onDelete(contato.identificador)">delete</button></td>
+			<td><button (click)="onDelete(contato.identificador, i)">delete</button></td>
 		</tr>				
 	</tbody>
 	<tfoot>

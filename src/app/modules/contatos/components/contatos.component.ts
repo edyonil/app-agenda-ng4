@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 import { Contatos } from './../models/contatos.model';
 import { ContatosService } from './../services/contatos.service';
@@ -9,23 +8,22 @@ import { ContatosService } from './../services/contatos.service';
   templateUrl: './contatos.component.html',
   styleUrls: ['./contatos.component.css']
 })
-export class ContatosComponent implements OnInit {
+export class ContatosComponent implements OnInit
+{
 
   contatos: Contatos[] = [];
 
   constructor(
   	private contatosService: ContatosService,
-  	private router: Router
   ) {}
   
   ngOnInit() {
   	this.contatosService.getContatos().then(contatos => this.contatos = contatos);
   }
 
-  onDelete(id)
+  onDelete(id, i)
   {
     this.contatos = this.contatosService.deleteContato(id);
-    this.router.navigate(['/contatos']);    
+ 	  this.contatos.splice(i, 1)  
   }
-
 }

@@ -15,13 +15,13 @@ export class ContatosService {
   	{	
       identificador: 2,
       nome: 'Danielle', 
-  		telefone: '71 9 9876-5432', 
+  		telefone: '71 9 9876-1234', 
   		operadora: 'CLARO'
   	},    
   	{	
       identificador: 3,
       nome: 'Larissa', 
-  		telefone: '71 9 9876-5432', 
+  		telefone: '71 9 9876-5245', 
   		operadora: 'OI'
   	}
   ];
