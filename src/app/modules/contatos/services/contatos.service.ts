@@ -1,62 +1,98 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers, RequestOptions } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 import { Contatos } from './../models/contatos.model';
 
 @Injectable()
 export class ContatosService {
 
-  private contatos: Contatos[] = 
-  [
-  	{	
-      identificador: 1,
-      nome: 'Diego', 
-  		telefone: '71 9 9876-5432', 
-  		operadora: 'TIM'
-  	},
-  	{	
-      identificador: 2,
-      nome: 'Danielle', 
-  		telefone: '71 9 9876-1234', 
-  		operadora: 'CLARO'
-  	},    
-  	{	
-      identificador: 3,
-      nome: 'Larissa', 
-  		telefone: '71 9 9876-5245', 
-  		operadora: 'OI'
-  	}
-  ];
+  // private contatos: Contatos[] = 
+  // [
+  // 	{	
+  //     identificador: 1,
+  //     nome: 'Diego', 
+  // 		telefone: '71 9 9876-5432', 
+  // 		operadora: 'TIM'
+  // 	},
+  // 	{	
+  //     identificador: 2,
+  //     nome: 'Danielle', 
+  // 		telefone: '71 9 9876-1234', 
+  // 		operadora: 'CLARO'
+  // 	},    
+  // 	{	
+  //     identificador: 3,
+  //     nome: 'Larissa', 
+  // 		telefone: '71 9 9876-5245', 
+  // 		operadora: 'OI'
+  // 	}
+  // ];
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getContatos(): Promise<Contatos[]>
+  getContatos(): Observable<Contatos[]>
   {
-    return Promise.resolve(this.contatos);  	
+    // return Promise.resolve(this.contatos);
+    return this.http.get( "http://localhost:3000/contatos" ).map( response => response.json() );  	
   }
 
-  getContato(id: number): Promise<Contatos>
+  getContato(id: number)
   { 
-    return this.getContatos().then( contatos => contatos.find( contato => contato.identificador == id ) );       
+    return this.getContatos().map( contatos => contatos.find( contato => contato.identificador == id ) );
+    // return this.getContatos().then( contatos => contatos.find( contato => contato.identificador == id ) );       
+  }
+
+  getContatoByMaxId()
+  {
+    return this.getContatos()
+      .map( 
+        contatos => contatos.reduce( 
+          ( contato, contatoAtual, b, c ) => { 
+            if(contato.identificador >= contatoAtual.identificador)
+            {                    
+              return contato;
+            }else{
+              return contatoAtual;
+            }
+          }
+        )
+      );
   }
 
   addContato(item: Contatos)
   {
-  	this.contatos.push(item);
-  }
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+ 
+  	this.http.post( 
+      "http://localhost:3000/contatos", 
+      JSON.stringify(item), 
+      new RequestOptions({headers: headers})
+    ).subscribe();
+  }  
+
 
   editContato(item: Contatos)
   {
-    this.getContato(item.identificador).then(contato => {
-      contato.nome = item.nome;      
-      contato.telefone = item.telefone;
-      contato.operadora = item.operadora;
-    });    
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.put( 
+      `http://localhost:3000/contatos/${item.identificador}`, 
+      JSON.stringify(item), 
+      new RequestOptions({headers: headers})
+    ).subscribe();   
   }
 
   deleteContato(id: number)
   { 
-    this.getContatos().then( contatos => {
-      this.contatos = contatos.filter(contato => contato.identificador != id)
-    });
-    return this.contatos;
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.delete( 
+      `http://localhost:3000/contatos/${id}`, 
+      new RequestOptions({headers: headers})
+    );  
   }
 }

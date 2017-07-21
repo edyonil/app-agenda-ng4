@@ -1,0 +1,81 @@
+{
+  "contatos": [
+    {
+      "identificador": 1,
+      "nome": "Diego",
+      "telefone": "71 9 9876-5432",
+      "operadora": "TIM",
+      "id": 1
+    },
+    {
+      "identificador": 2,
+      "nome": "Danielle",
+      "telefone": "71 9 9876-1234",
+      "operadora": "CLARO",
+      "id": 2
+    },
+    {
+      "identificador": 3,
+      "nome": "Larissa",
+      "telefone": "71 9 8876-5245",
+      "operadora": "OI",
+      "id": 3
+    },
+    {
+      "identificador": 4,
+      "nome": "Andressa",
+      "telefone": "71 9 8636-1245",
+      "operadora": "OI",
+      "id": 4
+    },
+    {
+      "identificador": 5,
+      "nome": "Carlos",
+      "telefone": "71 9 8333-4532",
+      "operadora": "TIM",
+      "id": 5
+    },
+    {
+      "identificador": 6,
+      "nome": "Marcos",
+      "telefone": "71 9 8867-0912",
+      "operadora": "OI",
+      "id": 6
+    },
+    {
+      "identificador": 7,
+      "nome": "Antonio",
+      "telefone": "71 9 9837-0123",
+      "operadora": "OI",
+      "id": 7
+    },
+    {
+      "identificador": 8,
+      "nome": "Ricardo",
+      "telefone": "71 9 4372-7453",
+      "operadora": "CLARO",
+      "id": 8
+    },
+    {
+      "identificador": 9,
+      "nome": "Joao Ricardo",
+      "telefone": "71 9 3724-3745",
+      "operadora": "TIM",
+      "id": 9
+    },
+    {
+      "identificador": 10,
+      "nome": "Angelica Silva",
+      "telefone": "71 9 3642-3253",
+      "operadora": "CLARO",
+      "id": 10
+    },
+    {
+      "identificador": 13,
+      "nome": "Joao Ricardo",
+      "telefone": "71 9 3724-3745",
+      "operadora": "TIM",
+      "id": 13
+    }
+  ]
+}

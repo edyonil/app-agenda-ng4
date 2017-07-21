@@ -17,8 +17,9 @@ import { ContatosService } from './../../services/contatos.service';
 
 export class ContatoDetailComponent implements OnInit {
  
-  contato: Contatos;  
-
+  contato: Contatos
+  contatoMaxId: number
+  
   constructor(
     private contatosService: ContatosService,  
     private route: ActivatedRoute,
@@ -27,49 +28,49 @@ export class ContatoDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() 
-  {    
-    this.route.paramMap
-      .switchMap( (params: ParamMap) => this.contatosService.getContato(+params.get('id')) )
-      .subscribe( contatos => this.contato = contatos );       
+  { 
+    this.getContatos()
+  }
+
+  newContato(identificador, nome, telefone, operadora)
+  {
+    return {
+      identificador: identificador,
+      nome: nome,
+      telefone: telefone,
+      operadora: operadora
+    } 
+  }
+
+  getContatos()
+  {
+    if(this.route.snapshot.params['id'])
+    {      
+      this.contatosService.getContato( +this.route.snapshot.params['id'] )
+          .subscribe( contato => this.contato = contato )
+    }
+    else
+    {
+      this.contatosService.getContatoByMaxId()
+          .subscribe( contato => this.contato = this.newContato(contato.identificador + 1, '', '', ''))              
+    } 
   }
 
   add(form) 
   {
-
-    this.contatosService.getContato(form.value.identificador).then(
-      contato => {
-        if(!contato)
-        {
-          if(!Object.keys(form.value).every(key => form.value[key]))
-          {
-            this.router.navigate(['/contatos']); 
-          }
-          else
-          {
-            this.contatosService.addContato(
-              {
-                identificador: form.value.identificador,
-                nome: form.value.nome,
-                telefone: form.value.telefone,
-                operadora: form.value.operadora
-              }
-            )
-          } 
-        }
-        else
-        {
-          this.contatosService.editContato(
-            {
-              identificador: form.value.identificador,
-              nome: form.value.nome,
-              telefone: form.value.telefone,
-              operadora: form.value.operadora
-            }
-          );
-        }
+    let newContato = this.newContato(form.value.identificador, form.value.nome, form.value.telefone, form.value.operadora)
+    
+    this.contatosService.getContato( newContato.identificador ).subscribe(contato => {
+      if(!contato)
+      {        
+        this.contatosService.addContato( newContato )
       }
-    )
-    this.router.navigate(['/contatos']);  
+      else
+      {
+        this.contatosService.editContato( newContato )
+      }
+      this.router.navigate(['/contatos'])
+    })    
   }
 
   goBack(): void 

@@ -1,27 +1,32 @@
-<a routerLink="/home">Home</a>
-<table>
-	<tbody>
-		<tr>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Telefone</th>
-			<th>Operadora</th>
-			<th colspan="2">Ação</th>
-		</tr>
-		<tr *ngFor="let contato of contatos; let i = index">
-			<td>{{contato.identificador}}</td>
-			<td>{{contato.nome}}</td>
-			<td>{{contato.telefone}}</td>
-			<td>{{contato.operadora}}</td>
-			<td><button routerLink="/contato/{{contato.identificador}}/edit">edit</button></td>
-			<td><button (click)="onDelete(contato.identificador, i)">delete</button></td>
-		</tr>				
-	</tbody>
-	<tfoot>
-		<tr>
-			<td>
-				<button routerLink="/contato/add">Add</button>
-			</td>			
-		</tr>
-	</tfoot>
-</table>
+<div class="row">
+	<div class="col-md-12">
+		<button [routerLink]="['/contato/add']">Add</button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Telefone</th>
+						<th>Operadora</th>
+						<th colspan="2">Ação</th>
+					</tr>
+				</thead>
+				<tbody>					
+					<tr *ngFor="let contato of contatos; let index = index">
+						<td>{{contato.identificador}}</td>
+						<td>{{contato.nome}}</td>
+						<td>{{contato.telefone}}</td>
+						<td>{{contato.operadora}}</td>
+						<td><button routerLink="/contato/{{contato.identificador}}/edit">edit</button></td>
+						<td><button (click)="onDelete(contato.identificador, index)">delete</button></td>
+					</tr>				
+				</tbody>
+			</table>			
+		</div>		
+	</div>
+</div>

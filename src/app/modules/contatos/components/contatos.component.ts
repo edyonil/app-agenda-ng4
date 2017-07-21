@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 import { Contatos } from './../models/contatos.model';
 import { ContatosService } from './../services/contatos.service';
@@ -8,22 +8,41 @@ import { ContatosService } from './../services/contatos.service';
   templateUrl: './contatos.component.html',
   styleUrls: ['./contatos.component.css']
 })
-export class ContatosComponent implements OnInit
+export class ContatosComponent implements OnInit, AfterContentInit
 {
 
-  contatos: Contatos[] = [];
+  contatos: Contatos[];
 
   constructor(
   	private contatosService: ContatosService,
   ) {}
   
-  ngOnInit() {
-  	this.contatosService.getContatos().then(contatos => this.contatos = contatos);
+  ngOnInit() 
+  {
+  	this.getContatos()
+  }
+
+  ngAfterContentInit()
+  {
+    this.getContatos() 
+  }
+
+  getContatos()
+  {
+    this.contatosService.getContatos().subscribe( contatos => this.contatos = contatos )
   }
 
   onDelete(id, i)
   {
-    this.contatos = this.contatosService.deleteContato(id);
- 	  this.contatos.splice(i, 1)  
+    this.contatosService.deleteContato(id).subscribe( response => {
+      if(response.ok)
+      {
+        this.contatos = this.contatos.filter( contato => contato.identificador != id )  
+      }
+      else 
+      {
+        throw new Error("deu merda silvio santos");
+      }
+    })     
   }
 }

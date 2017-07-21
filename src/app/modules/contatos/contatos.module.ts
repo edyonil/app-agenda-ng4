@@ -8,18 +8,20 @@ import { appRoutes } from './../../app.routes';
 import { ContatosComponent } from './components/contatos.component';
 import { ContatoDetailComponent } from './components/contato-detail/contato-detail.component';
 import { ContatosService } from './services/contatos.service';
+import { InputComponent } from './components/shared/input/input.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(
+    RouterModule.forChild(
       appRoutes
     )
   ],
   declarations: [
   	ContatosComponent,
-    ContatoDetailComponent
+    ContatoDetailComponent,
+    InputComponent
   ],
   providers: [
     ContatosService

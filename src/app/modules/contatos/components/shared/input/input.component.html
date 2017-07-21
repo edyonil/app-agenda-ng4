@@ -1,0 +1,8 @@
+<div class="form-group" 
+  [class.has-success]="ipt.valid && (ipt.dirty || ipt.touch)"
+  [class.has-error]="ipt.invalid && (ipt.dirty || ipt.touch)">
+  <label class="control-label" for="{{for}}">{{label}}</label>
+    <ng-content></ng-content>
+  <span class="help-block" *ngIf="ipt.valid && (ipt.dirty || ipt.touch)">Ok</span>
+  <span class="help-block" *ngIf="ipt.invalid && (ipt.dirty || ipt.touch)">{{errorMessage}}</span>
+</div>

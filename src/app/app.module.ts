@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { appRoutes } from './app.routes';
 
@@ -16,6 +17,7 @@ import { ContatosModule} from './modules/contatos/contatos.module';
     BrowserModule,
     ContatosModule,
     HomeModule,
+    HttpModule,
     RouterModule.forRoot(
     	appRoutes
     )

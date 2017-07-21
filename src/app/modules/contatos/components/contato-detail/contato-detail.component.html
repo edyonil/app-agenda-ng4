@@ -1,14 +1,21 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<form #form="ngForm" (ngSubmit)="add(form)">
+<div class="row">
+	<div class="col-md-12">
+		<form #form="ngForm" (ngSubmit)="add(form)">
+			<div>
+				<label>ID</label>
 				<input type="text" [ngModel]="contato?.identificador" readonly name="identificador">
-				<input type="text" [ngModel]="contato?.nome" name="nome" placeholder="nome">
-				<input type="text" [ngModel]="contato?.telefone" name="telefone" placeholder="telefone">
-				<input type="text" [ngModel]="contato?.operadora" name="operadora" placeholder="operadora">
-				<button type="submit">Add</button>
-			</form>
+			</div>
+			<app-input label="NOME" errorMessage="Campo Obrigatório" for="nome">
+				<input type="text" class="form-control" [ngModel]="contato?.nome" name="nome" ngModel required placeholder="nome">
+			</app-input>
+			<app-input label="TELEFONE" errorMessage="Campo Obrigatório" for="telefone">
+				<input type="text" class="form-control" [ngModel]="contato?.telefone" name="telefone" ngModel required placeholder="telefone">
+			</app-input>
+			<app-input label="OPERADORA" errorMessage="Campo Obrigatório" for="operadora">
+				<input type="text" class="form-control" [ngModel]="contato?.operadora" name="operadora" ngModel required placeholder="operadora">
+			</app-input>
+			<button type="submit" [disabled]="!form.valid">Add</button>
 			<button (click)="goBack()">Voltar</button>
-		</div>
+		</form>		
 	</div>
 </div>

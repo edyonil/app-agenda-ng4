@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './../../app.routes';
 
 import { ContatosModule } from './../contatos/contatos.module';
-
+import { MessagesModule } from './../messages/messages.module';
 
 import { HomeComponent } from './components/home.component';
 
@@ -13,7 +13,8 @@ import { HomeComponent } from './components/home.component';
   imports: [
     CommonModule,
     ContatosModule,
-    RouterModule.forRoot(
+    MessagesModule,
+    RouterModule.forChild(
       appRoutes
     )
   ],
