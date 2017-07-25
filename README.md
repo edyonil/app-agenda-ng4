@@ -6,9 +6,14 @@ Esse é um projeto gerado com [Angular CLI](https://github.com/angular/angular-c
 
 Execute o comando `npm install`
 
+## Instalando o Json-Server
+
+Execute `npm install -g json-server`
+
 ## Rodar o server
 
-Execute o comando `ng serve` e digite na url do browser localhost:4200
+Execute o comando `ng serve` na pasta raiz do app e digite na url do browser: localhost:4200
+Execute também o comando `json-server db.json` na pasta raiz do app
 
 ## Build
 
