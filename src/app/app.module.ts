@@ -8,6 +8,7 @@ import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { ContatosModule} from './modules/contatos/contatos.module';
+import { OperadorasModule } from './modules/operadoras/operadoras.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ContatosModule} from './modules/contatos/contatos.module';
     BrowserModule,
     ContatosModule,
     HomeModule,
+    OperadorasModule,    
     HttpModule,
     RouterModule.forRoot(
     	appRoutes

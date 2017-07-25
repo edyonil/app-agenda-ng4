@@ -76,6 +76,31 @@
       "telefone": "71 9 3724-3745",
       "operadora": "TIM",
       "id": 13
+    },
+    {
+      "identificador": 14,
+      "nome": "dffd",
+      "telefone": "1221",
+      "operadora": "4",
+      "id": 14
+    }
+  ],
+  "operadoras":[
+    {
+      "id": 1, 
+      "nome": "OI"
+    },
+    {
+      "id": 2, 
+      "nome": "TIM"
+    },
+    {
+      "id": 3, 
+      "nome": "CLARO"
+    },
+    {
+      "id": 4, 
+      "nome": "VIVO"
     }
   ]
 }

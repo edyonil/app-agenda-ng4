@@ -13,7 +13,7 @@ import { HomeComponent } from './components/home.component';
   imports: [
     CommonModule,
     ContatosModule,
-    MessagesModule,
+    MessagesModule,    
     RouterModule.forChild(
       appRoutes
     )

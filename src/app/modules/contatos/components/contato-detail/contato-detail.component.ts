@@ -19,6 +19,13 @@ export class ContatoDetailComponent implements OnInit {
  
   contato: Contatos
   contatoMaxId: number
+
+  operadoras = [
+    {id: 1, nome: "OI"},
+    {id: 2, nome: "TIM"},
+    {id: 3, nome: "CLARO"},
+    {id: 4, nome: "VIVO"}
+  ]
   
   constructor(
     private contatosService: ContatosService,  

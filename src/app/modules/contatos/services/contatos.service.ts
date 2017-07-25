@@ -9,28 +9,6 @@ import { Contatos } from './../models/contatos.model';
 @Injectable()
 export class ContatosService {
 
-  // private contatos: Contatos[] = 
-  // [
-  // 	{	
-  //     identificador: 1,
-  //     nome: 'Diego', 
-  // 		telefone: '71 9 9876-5432', 
-  // 		operadora: 'TIM'
-  // 	},
-  // 	{	
-  //     identificador: 2,
-  //     nome: 'Danielle', 
-  // 		telefone: '71 9 9876-1234', 
-  // 		operadora: 'CLARO'
-  // 	},    
-  // 	{	
-  //     identificador: 3,
-  //     nome: 'Larissa', 
-  // 		telefone: '71 9 9876-5245', 
-  // 		operadora: 'OI'
-  // 	}
-  // ];
-
   constructor(private http: Http) { }
 
   getContatos(): Observable<Contatos[]>
