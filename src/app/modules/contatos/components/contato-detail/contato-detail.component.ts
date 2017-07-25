@@ -64,21 +64,20 @@ export class ContatoDetailComponent implements OnInit {
   }
 
   add(form) 
-  {
-    console.log(form.value);
-    // let newContato = this.newContato(form.value.identificador, form.value.nome, form.value.telefone, form.value.operadora)
+  {  
+    let newContato = this.newContato(form.value.identificador, form.value.nome, form.value.telefone, form.value.operadora)
     
-    // this.contatosService.getContato( newContato.identificador ).subscribe(contato => {
-    //   if(!contato)
-    //   {        
-    //     this.contatosService.addContato( newContato )
-    //   }
-    //   else
-    //   {
-    //     this.contatosService.editContato( newContato )
-    //   }
-    //   this.router.navigate(['/contatos'])
-    // })    
+    this.contatosService.getContato( newContato.identificador ).subscribe(contato => {
+      if(!contato)
+      {        
+        this.contatosService.addContato( newContato )
+      }
+      else
+      {
+        this.contatosService.editContato( newContato )
+      }
+      this.router.navigate(['/contatos'])
+    })    
   }
 
   goBack(): void 
