@@ -12,7 +12,7 @@
 				<input type="text" class="form-control" [ngModel]="contato?.telefone" name="telefone" ngModel required pattern="[0-9]*$" placeholder="telefone" autocomplete="off">
 			</app-input>
 			<!-- <app-input label="OPERADORA" errorMessage="Campo Obrigatório" for="operadora">  -->
-				<app-operadoras [ngModel]="contato?.operadora" ngModel name="operadora"></app-operadoras>
+				<app-operadoras [ngModel]="operadora.operadora" #operadora name="operadora"></app-operadoras>
 			<!-- </app-input>  -->
 
 
