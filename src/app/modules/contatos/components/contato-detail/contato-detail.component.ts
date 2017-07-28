@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 import 'rxjs/add/operator/switchMap';
 import { Routes } from '@angular/router';
@@ -20,22 +21,24 @@ export class ContatoDetailComponent implements OnInit {
   contato: Contatos
   contatoMaxId: number
 
-  operadoras = [
-    {id: 1, nome: "OI"},
-    {id: 2, nome: "TIM"},
-    {id: 3, nome: "CLARO"},
-    {id: 4, nome: "VIVO"}
-  ]
+  formulario: FormGroup;
   
   constructor(
     private contatosService: ContatosService,  
     private route: ActivatedRoute,
     private location: Location,  
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit() 
   { 
+    this.formulario = this.formBuilder.group({
+      identificador: [null],
+      nome: [null],
+      telefone: [null],
+      operadora: [null]
+    })
     this.getContatos()
   }
 
@@ -54,12 +57,26 @@ export class ContatoDetailComponent implements OnInit {
     if(this.route.snapshot.params['id'])
     {      
       this.contatosService.getContato( +this.route.snapshot.params['id'] )
-          .subscribe( contato => this.contato = contato )
+        .subscribe( contato => {     
+          this.formulario = this.formBuilder.group({
+            identificador: [contato.identificador],
+            nome: [contato.nome],
+            telefone: [contato.telefone],
+            operadora: [contato.operadora]
+          })          
+        }) 
     }
     else
-    {
+    {    
       this.contatosService.getContatoByMaxId()
-          .subscribe( contato => this.contato = this.newContato(contato.identificador + 1, '', '', ''))              
+        .subscribe( contato => {     
+          this.formulario = this.formBuilder.group({
+            identificador: [contato.identificador + 1],
+            nome: [null],
+            telefone: [null],
+            operadora: [null]
+          })          
+        })            
     } 
   }
 

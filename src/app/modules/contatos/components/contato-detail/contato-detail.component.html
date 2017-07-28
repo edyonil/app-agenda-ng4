@@ -1,19 +1,19 @@
-{{form.value | json}}
+{{formulario.value | json}}
 <div class="row">
 	<div class="col-md-12">
-		<form #form="ngForm" (ngSubmit)="add(form)">
-			<app-input label="ID">
-				<input type="text" class="form-control" [ngModel]="contato?.identificador" name="identificador" ngModel readonly placeholder="identificador">
-			</app-input>			
-			<app-input label="NOME" errorMessage="Campo Obrigatório" for="nome">
-				<input type="text" class="form-control" [ngModel]="contato?.nome" name="nome" ngModel required placeholder="nome" autocomplete="off">
-			</app-input>
-			<app-input label="TELEFONE" errorMessage="Campo Obrigatório e numerico" for="telefone">
-				<input type="text" class="form-control" [ngModel]="contato?.telefone" name="telefone" ngModel required pattern="[0-9]*$" placeholder="telefone" autocomplete="off">
-			</app-input>
-			<app-input label="OPERADORA" errorMessage="Campo Obrigatório" for="operadora">
-				<app-operadoras [ngModel]="operadora.operadora" #operadora name="operadora"></app-operadoras>
-			</app-input>  
+		<form [formGroup]="formulario" (ngSubmit)="add(formulario)">
+			<!-- <app-input label="ID"> -->
+				<input type="text" class="form-control" formControlName="identificador" readonly placeholder="identificador">
+			<!-- </app-input>			 -->
+			<!-- <app-input label="NOME" errorMessage="Campo Obrigatório" for="nome"> -->
+				<input type="text" class="form-control" formControlName="nome" required placeholder="nome" autocomplete="off">
+			<!-- </app-input> -->
+			<!-- <app-input label="TELEFONE" errorMessage="Campo Obrigatório e numerico" for="telefone"> -->
+				<input type="text" class="form-control" formControlName="telefone" required pattern="[0-9]*$" placeholder="telefone" autocomplete="off">
+			<!-- </app-input> -->
+			<!-- <app-input label="OPERADORA" errorMessage="Campo Obrigatório" for="operadora"> -->
+				<app-operadoras formControlName="operadora" ngModel></app-operadoras>
+			<!-- </app-input>   -->
 
 
 			<!-- <div class="form-group">
@@ -22,7 +22,7 @@
 					<option *ngFor="let operadora of operadoras" [value]="operadora.id">{{operadora.nome}}</option>
 				</select>
 			</div> -->
-			<button class="btn btn-success" type="submit" [disabled]="!form.valid">Add</button>
+			<button class="btn btn-success" type="submit">Add</button>
 			<button class="btn btn-danger" (click)="goBack()">Voltar</button>
 		</form>		
 	</div>
