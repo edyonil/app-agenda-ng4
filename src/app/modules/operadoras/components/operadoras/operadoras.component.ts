@@ -21,8 +21,6 @@ export class OperadorasComponent implements OnInit, ControlValueAccessor {
 
   onChange = (_: any) => {};
 
-  @Input() formControlName
-
   constructor(private operadorasService: OperadorasService) { }
 
   ngOnInit() 

@@ -1,15 +1,6 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-    // <button (click)="increment()">+</button>
-    // {{counterValue}}
-    // <button (click)="decrement()">-</button>
-
-    // <select>
-    //     <option value="1">arroz</option>
-    //     <option value="2">feijao</option>
-    //     <option value="3">carne</option>
-    // </select>
 @Component({
   selector: 'counter',
   template: `
@@ -24,7 +15,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class CounterComponent implements OnInit, ControlValueAccessor{
-    
+  
+  @Input() ipt = 1
+
   propagateChange = (_: any) => {};
 
   ngOnInit()

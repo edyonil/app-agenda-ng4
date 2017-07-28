@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -74,7 +74,7 @@ export class ContatoDetailComponent implements OnInit {
             identificador: [contato.identificador + 1],
             nome: [null],
             telefone: [null],
-            operadora: [null]
+            operadora: [1]
           })          
         })            
     } 
