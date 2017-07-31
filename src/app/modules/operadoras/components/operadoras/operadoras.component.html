@@ -1,5 +1,5 @@
 <select class="form-control" [(ngModel)]="value">
-  <option *ngFor="let operadora of operadoras" [value]="operadora.id">
-    {{operadora.nome}}
+  <option *ngFor="let op of operadoras" [value]="op.id">
+    {{op.nome}}
   </option> 
 </select>

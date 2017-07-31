@@ -90,6 +90,101 @@
       "telefone": null,
       "operadora": 1,
       "id": 16
+    },
+    {
+      "identificador": 17,
+      "nome": null,
+      "telefone": null,
+      "operadora": 1,
+      "id": 17
+    },
+    {
+      "identificador": 18,
+      "nome": null,
+      "telefone": null,
+      "operadora": 1,
+      "id": 18
+    },
+    {
+      "identificador": 19,
+      "nome": null,
+      "telefone": null,
+      "operadora": 1,
+      "id": 19
+    },
+    {
+      "identificador": 20,
+      "nome": "Edy",
+      "telefone": "45788989",
+      "operadora": "3",
+      "id": 20
+    },
+    {
+      "identificador": 21,
+      "nome": null,
+      "telefone": null,
+      "operadora": {
+        "id": 2,
+        "name": "OI"
+      },
+      "id": 21
+    },
+    {
+      "identificador": 22,
+      "nome": null,
+      "telefone": null,
+      "operadora": {
+        "id": 2,
+        "name": "OI"
+      },
+      "id": 22
+    },
+    {
+      "identificador": 23,
+      "nome": null,
+      "telefone": null,
+      "operadora": {
+        "id": 2,
+        "name": "OI"
+      },
+      "id": 23
+    },
+    {
+      "identificador": 24,
+      "nome": null,
+      "telefone": null,
+      "operadora": {
+        "id": 1,
+        "name": "OI"
+      },
+      "id": 24
+    },
+    {
+      "identificador": 25,
+      "nome": "Teste",
+      "telefone": "Valor default",
+      "operadora": {
+        "id": 1,
+        "name": "OI"
+      },
+      "id": 25
+    },
+    {
+      "identificador": 26,
+      "nome": null,
+      "telefone": null,
+      "operadora": {
+        "id": 1,
+        "name": "OI"
+      },
+      "id": 26
+    },
+    {
+      "identificador": 27,
+      "nome": null,
+      "telefone": null,
+      "operadora": "3",
+      "id": 27
     }
   ],
   "operadoras": [

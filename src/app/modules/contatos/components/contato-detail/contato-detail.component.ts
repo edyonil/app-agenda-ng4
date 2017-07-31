@@ -37,7 +37,7 @@ export class ContatoDetailComponent implements OnInit {
       identificador: [null],
       nome: [null],
       telefone: [null],
-      operadora: [null]
+      operadora: [2]
     })
     this.getContatos()
   }
@@ -74,7 +74,7 @@ export class ContatoDetailComponent implements OnInit {
             identificador: [contato.identificador + 1],
             nome: [null],
             telefone: [null],
-            operadora: [1]
+            operadora: [2]
           })          
         })            
     } 

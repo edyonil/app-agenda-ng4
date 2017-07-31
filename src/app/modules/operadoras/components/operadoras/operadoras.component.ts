@@ -21,6 +21,10 @@ export class OperadorasComponent implements OnInit, ControlValueAccessor {
 
   @Input() _counterValue = 0;
 
+  @Input('option') optionNumber: number;
+
+  private operadora;
+
   onChange = (_: any) => {};
 
   constructor(private operadorasService: OperadorasService) { }
@@ -32,12 +36,21 @@ export class OperadorasComponent implements OnInit, ControlValueAccessor {
 
   //esse cara eh responsavel por pegar o valor atual do select operadoras e passar pra o registerOnChange
   set value(value)
-  {    
-    this._counterValue = value;
-    this.onChange(value)    
+  { 
+    if (value !== this.operadora) {
+      this.operadora = value;
+      this.onChange(value);
+    }
+  }
+
+  get value() {
+    return this.operadora;
   }
 
   writeValue(obj: any): void {
+    if (obj !== this.operadora) {
+          this.operadora = obj;
+      }
     //this.value = 1; seta default 1 mas nao ta setando no <select>, entender isso mais tarde
   }
 
