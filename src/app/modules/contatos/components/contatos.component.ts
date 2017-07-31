@@ -2,6 +2,7 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 import { Contatos } from './../models/contatos.model';
 import { ContatosService } from './../services/contatos.service';
+import { OperadorasService } from './../../operadoras/services/operadoras.service';
 
 @Component({
   selector: 'app-contatos',
@@ -14,7 +15,8 @@ export class ContatosComponent implements OnInit, AfterContentInit
   contatos: Contatos[];
 
   constructor(
-  	private contatosService: ContatosService,
+    private contatosService: ContatosService,
+    private operadorasService: OperadorasService
   ) {}
   
   ngOnInit() 
@@ -29,7 +31,14 @@ export class ContatosComponent implements OnInit, AfterContentInit
 
   getContatos()
   {
-    this.contatosService.getContatos().subscribe( contatos => this.contatos = contatos )
+    this.contatosService.getContatos().subscribe( contatos => {      
+      contatos.map(contato => this.operadorasService.getOperadora(+contato.operadora).subscribe(
+        operadora => {
+          contato.operadora = operadora.nome
+          this.contatos = contatos
+        }
+      ))       
+    })
   }
 
   onDelete(id, i)

@@ -4,82 +4,82 @@
       "identificador": 1,
       "nome": "Diego",
       "telefone": "71 9 9876-5432",
-      "operadora": "TIM",
+      "operadora": "2",
       "id": 1
     },
     {
       "identificador": 2,
       "nome": "Danielle",
       "telefone": "71 9 9876-1234",
-      "operadora": "CLARO",
+      "operadora": "4",
       "id": 2
     },
     {
       "identificador": 3,
       "nome": "Larissa",
       "telefone": "71 9 8876-5245",
-      "operadora": "OI",
+      "operadora": "1",
       "id": 3
     },
     {
       "identificador": 4,
       "nome": "Andressa",
       "telefone": "71 9 8636-1245",
-      "operadora": "OI",
+      "operadora": "1",
       "id": 4
     },
     {
       "identificador": 5,
       "nome": "Carlos",
       "telefone": "71 9 8333-4532",
-      "operadora": "TIM",
+      "operadora": "2",
       "id": 5
     },
     {
       "identificador": 6,
       "nome": "Marcos",
       "telefone": "71 9 8867-0912",
-      "operadora": "OI",
+      "operadora": "1",
       "id": 6
     },
     {
       "identificador": 7,
       "nome": "Antonio",
       "telefone": "71 9 9837-0123",
-      "operadora": "OI",
+      "operadora": "4",
       "id": 7
     },
     {
       "identificador": 8,
       "nome": "Ricardo",
       "telefone": "71 9 4372-7453",
-      "operadora": "CLARO",
+      "operadora": "3",
       "id": 8
     },
     {
       "identificador": 9,
       "nome": "Joao Ricardo",
       "telefone": "71 9 3724-3745",
-      "operadora": "TIM",
+      "operadora": "2",
       "id": 9
     },
     {
       "identificador": 10,
       "nome": "Angelica Silva",
       "telefone": "71 9 3642-3253",
-      "operadora": "CLARO",
+      "operadora": "3",
       "id": 10
     },
     {
       "identificador": 13,
       "nome": "Joao Ricardo",
       "telefone": "71 9 3724-3745",
-      "operadora": "TIM",
+      "operadora": "2",
       "id": 13
     },
     {
       "identificador": 15,
-      "nome": "dddddd",
+      "nome": "Josué",
       "telefone": "71 9 93275426",
       "operadora": "2",
       "id": 15

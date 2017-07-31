@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContatosComponent } from './modules/contatos/components/contatos.component';
 import { HomeComponent } from './modules/home/components/home.component';
 import { ContatoDetailComponent } from './modules/contatos/components/contato-detail/contato-detail.component';
-import { OperadorasComponent } from './modules/operadoras/components/operadoras/operadoras.component';
 
 export const appRoutes: Routes = [
   {
@@ -15,8 +14,7 @@ export const appRoutes: Routes = [
   },
   { path: 'contatos', component: ContatosComponent },
   { path: 'contato/add', component: ContatoDetailComponent },
-  { path: 'contato/:id/edit', component: ContatoDetailComponent },
-  { path: 'operadoras', component: OperadorasComponent }
+  { path: 'contato/:id/edit', component: ContatoDetailComponent }
   
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {

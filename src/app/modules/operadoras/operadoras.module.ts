@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { appRoutes } from './../../app.routes';
 
-import { OperadorasComponent } from './components/operadoras/operadoras.component';
 import { OperadorasService } from './services/operadoras.service';
 
 @NgModule({
@@ -18,13 +17,11 @@ import { OperadorasService } from './services/operadoras.service';
     )
   ],
   declarations: [
-    OperadorasComponent
   ],
   providers:[
     OperadorasService
   ],
   exports:[
-    OperadorasComponent
   ]
 })
 export class OperadorasModule { }
