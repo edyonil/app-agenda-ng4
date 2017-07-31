@@ -7,7 +7,10 @@ import 'rxjs/add/operator/switchMap';
 import { Routes } from '@angular/router';
 
 import { Contatos } from './../../models/contatos.model';
+import { Operadoras } from './../../../operadoras/models/operadoras.model';
+
 import { ContatosService } from './../../services/contatos.service';
+import { OperadorasService } from './../../../operadoras/services/operadoras.service';
 
 
 @Component({
@@ -20,11 +23,13 @@ export class ContatoDetailComponent implements OnInit {
  
   contato: Contatos
   contatoMaxId: number
+  operadoras: Operadoras
 
   formulario: FormGroup;
   
   constructor(
     private contatosService: ContatosService,  
+    private operadorasService: OperadorasService,
     private route: ActivatedRoute,
     private location: Location,  
     private router: Router,
@@ -78,6 +83,11 @@ export class ContatoDetailComponent implements OnInit {
           })          
         })            
     } 
+  }
+
+  getOperadoras()
+  {
+    this.operadorasService.getOperadoras().subscribe( operadoras => this.operadoras = operadoras )
   }
 
   add(form) 

@@ -11,11 +11,10 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { ContatosModule} from './modules/contatos/contatos.module';
 import { OperadorasModule } from './modules/operadoras/operadoras.module';
-import { CounterComponent } from './counter.component';
 
 @NgModule({
   declarations: [
-    AppComponent, CounterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

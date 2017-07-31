@@ -7,6 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   user = 'diego';
-
-  @Input() counter = 1
 }
