@@ -6,10 +6,12 @@
 			    Agenda de {{user}}
 		  	</h1>
 			  <router-outlet></router-outlet>
-			   <!-- <form #form="ngForm">
-				<counter name="counter" ngModel></counter>
+			    <form #form="ngForm">
+				  <counter name="counter" [ngModel]="1" #outer="ngModel" [value]="5"></counter>  
+				  		 <!-- <counter name="counter" ngModel [value]="5" (mudouValor)="onMudouValor(form)"></counter>  -->
 			  </form>
-			  <pre>{{ form.value | json }}</pre>  -->
+			  <pre>{{ form.value | json }}</pre>
+			   <pre>{{ outer  | json }}</pre>   
 		</div>	
 	</div> 
 </div>

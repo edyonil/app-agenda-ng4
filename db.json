@@ -83,6 +83,13 @@
       "telefone": "71 9 93275426",
       "operadora": "2",
       "id": 15
+    },
+    {
+      "identificador": 16,
+      "nome": null,
+      "telefone": null,
+      "operadora": 1,
+      "id": 16
     }
   ],
   "operadoras": [

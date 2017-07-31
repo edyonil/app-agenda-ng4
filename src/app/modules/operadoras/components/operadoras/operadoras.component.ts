@@ -19,6 +19,8 @@ export class OperadorasComponent implements OnInit, ControlValueAccessor {
 
   operadoras: Operadoras
 
+  @Input() _counterValue = 0;
+
   onChange = (_: any) => {};
 
   constructor(private operadorasService: OperadorasService) { }
@@ -31,6 +33,7 @@ export class OperadorasComponent implements OnInit, ControlValueAccessor {
   //esse cara eh responsavel por pegar o valor atual do select operadoras e passar pra o registerOnChange
   set value(value)
   {    
+    this._counterValue = value;
     this.onChange(value)    
   }
 

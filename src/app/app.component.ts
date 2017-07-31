@@ -1,12 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  user = 'diego';
+export class AppComponent implements OnInit{
+  user = 'diego'
 
-  @Input() counter = 1
+  ngOnInit() { }
+
+  onMudouValor(evento)
+  {
+    console.log(evento.controls)
+  }
 }

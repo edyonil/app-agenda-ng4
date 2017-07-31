@@ -22,6 +22,7 @@ import { CounterComponent } from './counter.component';
     ContatosModule,
     HomeModule,
     OperadorasModule,    
+    FormsModule,
     HttpModule,
 
     FormsModule,
